@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Controls"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/">
+    <Style TargetType="controls:ToastPrompt">
+        <Setter Property="Foreground"
+                Value="White" />
+        <Setter Property="HorizontalAlignment"
+                Value="Right" />
+        <Setter Property="VerticalAlignment"
+                Value="Top" />
+        <Setter Property="Padding"
+                Value="16,8,16,8" />
+        <Setter Property="Opacity"
+                Value="0" />
+        <Setter Property="IsHitTestVisible"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:ToastPrompt">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentControl x:Name="PART_Container">
+                            <StackPanel Margin="{TemplateBinding Padding}"
+                                        Orientation="Horizontal">
+                                <fa:FontAwesome VerticalAlignment="Center"
+                                                Icon="{TemplateBinding Icon}" />
+                                <TextBlock x:Name="MessageTextBlock"
+                                           Margin="8,0,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="{TemplateBinding Message}" />
+                            </StackPanel>
+                        </ContentControl>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Icon"
+                                 Value="None">
+                            <Setter TargetName="MessageTextBlock"
+                                    Property="Margin"
+                                    Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

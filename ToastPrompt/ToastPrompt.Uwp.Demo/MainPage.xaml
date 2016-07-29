@@ -1,0 +1,21 @@
+﻿<Page x:Class="Controls.Uwp.Demo.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:controls="using:Controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:ToastPrompt x:Name="ToastPrompt"
+                              HorizontalAlignment="Right"
+                              VerticalAlignment="Top"
+                              Background="Red"
+                              Foreground="White"
+                              Icon="Refresh"
+                              Message="Hello" />
+        <Button HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Content="Test"
+                Click="ButtonBase_OnClick"></Button>
+    </Grid>
+</Page>

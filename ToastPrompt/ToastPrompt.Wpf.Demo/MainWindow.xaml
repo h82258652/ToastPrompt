@@ -1,0 +1,24 @@
+﻿<Window x:Class="Controls.Wpf.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Controls;assembly=ToastPrompt.Wpf"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="525"
+        Height="350"
+        mc:Ignorable="d">
+    <Grid>
+        <controls:ToastPrompt x:Name="ToastPrompt"
+                              HorizontalAlignment="Right"
+                              VerticalAlignment="Top"
+                              Background="Red"
+                              Foreground="White"
+                              Icon="Check"
+                              Message="Hello" />
+        <Button HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Click="ButtonBase_OnClick"
+                Content="Test" />
+    </Grid>
+</Window>
