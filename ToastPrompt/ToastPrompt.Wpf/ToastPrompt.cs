@@ -17,7 +17,7 @@ namespace Controls
 
         private const string ContainerTemplateName = "PART_Container";
 
-        private BindableMargin _containerMargin;
+        public BindableMargin _containerMargin;
 
         static ToastPrompt()
         {
@@ -58,7 +58,7 @@ namespace Controls
 
         public async Task ShowAsync(double seconds = 2)
         {
-            await this.WaitForLoadedAsync();
+            await this.WaitForNonZeroSizeAsync();
 
             var width = ActualWidth;
 

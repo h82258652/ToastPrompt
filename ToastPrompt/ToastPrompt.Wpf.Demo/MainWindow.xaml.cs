@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using FontAwesome.WPF;
+using System.Windows;
+using System.Windows.Media;
 
 namespace Controls.Wpf.Demo
 {
@@ -14,7 +16,17 @@ namespace Controls.Wpf.Demo
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            await ToastPrompt.ShowAsync();
+            var bindable = new BindableMargin(ToastPrompt);
+            ToastPrompt.Margin = new Thickness(80, 0, 0, 0);
+
+            //await ToastPromptHelper.ShowErrorAsync("Hello world");
+
+            //ToastPrompt toastPrompt = new ToastPrompt();
+            //RootGrid.Children.Add(toastPrompt);
+            //toastPrompt.Background = new SolidColorBrush(Colors.Red);
+            //toastPrompt.Message = "Hello world";
+            //toastPrompt.Icon = FontAwesomeIcon.Check;
+            //await toastPrompt.ShowAsync();
         }
     }
 }

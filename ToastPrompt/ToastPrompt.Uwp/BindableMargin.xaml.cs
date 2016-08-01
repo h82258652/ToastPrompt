@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using Windows.UI.Xaml;
 
 namespace Controls
@@ -103,8 +102,6 @@ namespace Controls
 
         private static void RightChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            Debug.WriteLine(e.NewValue);
-
             var obj = (BindableMargin)d;
             var value = (double)e.NewValue;
 

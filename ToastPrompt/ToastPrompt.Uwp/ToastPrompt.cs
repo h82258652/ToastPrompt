@@ -49,7 +49,7 @@ namespace Controls
 
         public async Task ShowAsync(double seconds = 2)
         {
-            await this.WaitForLoadedAsync();
+            await this.WaitForNonZeroSizeAsync();
 
             var width = ActualWidth;
 
