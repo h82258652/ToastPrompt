@@ -81,7 +81,10 @@ namespace Controls
                 storyboard.Children.Add(animation);
             }
             {
-                var animation = new DoubleAnimationUsingKeyFrames();
+                var animation = new DoubleAnimationUsingKeyFrames()
+                {
+                    EnableDependentAnimation = true
+                };
                 animation.KeyFrames.Add(new DiscreteDoubleKeyFrame()
                 {
                     KeyTime = TimeSpan.FromSeconds(0),

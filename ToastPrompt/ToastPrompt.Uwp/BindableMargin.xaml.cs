@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using Windows.UI.Xaml;
 
 namespace Controls
 {
-    public class BindableMargin : DependencyObject
+    public partial class BindableMargin
     {
         public static readonly DependencyProperty BottomProperty = DependencyProperty.Register(nameof(Bottom), typeof(double), typeof(BindableMargin), new PropertyMetadata(default(double), BottomChanged));
 
@@ -102,6 +103,8 @@ namespace Controls
 
         private static void RightChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            Debug.WriteLine(e.NewValue);
+
             var obj = (BindableMargin)d;
             var value = (double)e.NewValue;
 
