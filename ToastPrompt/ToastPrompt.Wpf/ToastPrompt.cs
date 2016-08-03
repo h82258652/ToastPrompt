@@ -119,16 +119,12 @@ namespace Controls
                         EasingMode = EasingMode.EaseIn
                     }
                 });
-                animation.KeyFrames.Add(new DiscreteDoubleKeyFrame()
-                {
-                    KeyTime = TimeSpan.FromSeconds(seconds + 1),
-                    Value = 0
-                });
                 Storyboard.SetTarget(animation, _containerMargin);
                 Storyboard.SetTargetProperty(animation, new PropertyPath("Right"));
                 storyboard.Children.Add(animation);
             }
             await storyboard.BeginAsync();
+            _containerMargin.Right = 0;
         }
     }
 }

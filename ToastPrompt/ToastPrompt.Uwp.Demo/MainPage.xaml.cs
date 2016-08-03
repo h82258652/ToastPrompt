@@ -1,5 +1,7 @@
-﻿using Windows.UI.Xaml;
+﻿using Windows.UI;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
@@ -17,7 +19,12 @@ namespace Controls.Uwp.Demo
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            await ToastPrompt.ShowAsync();
+            ToastPrompt toastPrompt = new ToastPrompt();
+            RootGrid.Children.Add(toastPrompt);
+            toastPrompt.Background = new SolidColorBrush(Colors.Red);
+            toastPrompt.Message = "Hello world";
+            toastPrompt.Icon = new SymbolIcon(Symbol.Accept);
+            await toastPrompt.ShowAsync();
         }
     }
 }

@@ -29,7 +29,13 @@ namespace Controls
         {
             get
             {
-                return (double)GetValue(BottomProperty);
+                var ownerBottom = _owner.Margin.Bottom;
+                var bottom = (double)GetValue(BottomProperty);
+                if (ownerBottom.Equals(bottom) == false)
+                {
+                    SetValue(BottomProperty, ownerBottom);
+                }
+                return ownerBottom;
             }
             set
             {
@@ -53,7 +59,13 @@ namespace Controls
         {
             get
             {
-                return (double)GetValue(RightProperty);
+                var ownerRight = _owner.Margin.Right;
+                var right = (double)GetValue(RightProperty);
+                if (ownerRight.Equals(right) == false)
+                {
+                    SetValue(RightProperty, ownerRight);
+                }
+                return ownerRight;
             }
             set
             {
