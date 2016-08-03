@@ -16,10 +16,7 @@ namespace Controls.Wpf.Demo
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            var bindable = new BindableMargin(ToastPrompt);
-            ToastPrompt.Margin = new Thickness(0, 0, 80, 0);
-
-            //await ToastPromptHelper.ShowErrorAsync("Hello world");
+            await ToastPromptHelper.ShowErrorAsync("Hello world");
 
             //ToastPrompt toastPrompt = new ToastPrompt();
             //RootGrid.Children.Add(toastPrompt);

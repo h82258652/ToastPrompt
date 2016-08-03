@@ -47,7 +47,13 @@ namespace Controls
         {
             get
             {
-                return (double)GetValue(LeftProperty);
+                var ownerLeft = _owner.Margin.Left;
+                var left = (double)GetValue(LeftProperty);
+                if (ownerLeft.Equals(left) == false)
+                {
+                    SetValue(LeftProperty, ownerLeft);
+                }
+                return ownerLeft;
             }
             set
             {
@@ -77,7 +83,13 @@ namespace Controls
         {
             get
             {
-                return (double)GetValue(TopProperty);
+                var ownerTop = _owner.Margin.Top;
+                var top = (double)GetValue(TopProperty);
+                if (ownerTop.Equals(top) == false)
+                {
+                    SetValue(TopProperty, ownerTop);
+                }
+                return ownerTop;
             }
             set
             {

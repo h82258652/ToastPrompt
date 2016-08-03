@@ -17,7 +17,7 @@ namespace Controls
 
         private const string ContainerTemplateName = "PART_Container";
 
-        public BindableMargin _containerMargin;
+        private BindableMargin _containerMargin;
 
         static ToastPrompt()
         {
