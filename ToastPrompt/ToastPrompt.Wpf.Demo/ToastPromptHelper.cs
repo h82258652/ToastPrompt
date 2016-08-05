@@ -11,13 +11,40 @@ namespace Controls.Wpf.Demo
 {
     public class ToastPromptHelper
     {
+        public static async Task ShowWarningAsync(string message)
+        {
+            ToastPrompt toastPrompt = new ToastPrompt();
+            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(255, 193, 0));
+            toastPrompt.Message = message;
+            toastPrompt.Icon = FontAwesomeIcon.Warning;
+
+            var main = Application.Current.MainWindow as MainWindow;
+            main.RootGrid.Children.Add(toastPrompt);
+
+            await toastPrompt.ShowAsync();
+
+            main.RootGrid.Children.Remove(toastPrompt);
+        }
+
+        public static async Task ShowInformationAsync(string message)
+        {
+            ToastPrompt toastPrompt = new ToastPrompt();
+            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(0, 156, 243));
+            toastPrompt.Message = message;
+            toastPrompt.Icon = FontAwesomeIcon.InfoCircle;
+
+            var main = Application.Current.MainWindow as MainWindow;
+            main.RootGrid.Children.Add(toastPrompt);
+
+            await toastPrompt.ShowAsync();
+
+            main.RootGrid.Children.Remove(toastPrompt);
+        }
+
         public static async Task ShowErrorAsync(string message)
         {
             ToastPrompt toastPrompt = new ToastPrompt();
-            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(232, 17, 35));
-            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(206, 61, 58));
-            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(230, 0, 51));
-            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(255, 64, 64));
+            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(234, 23, 32));
             toastPrompt.Message = message;
             toastPrompt.Icon = FontAwesomeIcon.Close;
 
@@ -32,9 +59,7 @@ namespace Controls.Wpf.Demo
         public static async Task ShowMessageAsync(string message)
         {
             ToastPrompt toastPrompt = new ToastPrompt();
-            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(0, 120, 215));
-            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(00, 149, 217));
-            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(00, 128, 255));
+            toastPrompt.Background = new SolidColorBrush(Color.FromRgb(19, 192, 77));
             toastPrompt.Message = message;
             toastPrompt.Icon = FontAwesomeIcon.Check;
 

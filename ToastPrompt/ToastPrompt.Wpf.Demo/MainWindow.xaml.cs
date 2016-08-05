@@ -14,16 +14,24 @@ namespace Controls.Wpf.Demo
             InitializeComponent();
         }
 
-        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private async void ErrorClick(object sender, RoutedEventArgs e)
         {
-            await ToastPromptHelper.ShowErrorAsync("Hello world");
+            await ToastPromptHelper.ShowErrorAsync("error");
+        }
 
-            //ToastPrompt toastPrompt = new ToastPrompt();
-            //RootGrid.Children.Add(toastPrompt);
-            //toastPrompt.Background = new SolidColorBrush(Colors.Red);
-            //toastPrompt.Message = "Hello world";
-            //toastPrompt.Icon = FontAwesomeIcon.Check;
-            //await toastPrompt.ShowAsync();
+        private async void MessageClick(object sender, RoutedEventArgs e)
+        {
+            await ToastPromptHelper.ShowMessageAsync("message");
+        }
+
+        private async void InfoClick(object sender, RoutedEventArgs e)
+        {
+            await ToastPromptHelper.ShowInformationAsync("info");
+        }
+
+        private async void WarningClick(object sender, RoutedEventArgs e)
+        {
+            await ToastPromptHelper.ShowWarningAsync("warning");
         }
     }
 }
